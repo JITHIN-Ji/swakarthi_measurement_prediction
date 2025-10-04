@@ -8,7 +8,7 @@ from flask_cors import CORS
 def create_app():
     """Create and configure the Flask application."""
     app = Flask(__name__)
-    CORS(app)  # Enable CORS for all routes
+    CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
 
     initialize_model()
     
